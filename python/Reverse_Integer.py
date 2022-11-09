@@ -10,4 +10,4 @@ class Solution:
         x = int(str(x)[::-1])
         if flag_negative:
             x *= -1
-        return x
+        return x if (x <= 2 ** 31 - 1) and (x > -2 ** 31) else 0
