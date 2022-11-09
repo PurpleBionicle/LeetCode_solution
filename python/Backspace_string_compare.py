@@ -3,18 +3,14 @@
 
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
-        while s.count('#') != 0:
-            i = s.index('#')
-            if i != 0:
-                s = s[:i - 1] + s[i + 1:]
-            else:
-                t = t[:i - 1] + t[i + 1:]
+        def new_str(s: str) -> list:
+            res = []
 
-        while t.count('#') != 0:
-            i = t.index('#')
-            if i != 0:
-                t = t[:i - 1] + t[i + 1:]
-            else:
-                t = t[:i] + t[i + 1:]
+            for i in s:
+                if i != '#':
+                    res.append(i)
+                elif res:
+                    res.pop()
+            return res
 
-        return s == t
+        return new_str(s) == new_str(t)
