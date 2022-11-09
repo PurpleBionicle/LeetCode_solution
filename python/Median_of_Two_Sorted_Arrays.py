@@ -28,5 +28,6 @@ class Solution:
             return merge_list
 
         l1 = merge(nums1, nums2)
-        median = l1[len(l1) // 2] if len(l1) % 2 != 0 else l1[len(l1) // 2] + l1[len(l1) // 2 - 1]
+        median = l1[len(l1) // 2] if len(l1) % 2 != 0 else (l1[len(l1) // 2] + l1[len(l1) // 2 - 1]) / 2
         return median
+
