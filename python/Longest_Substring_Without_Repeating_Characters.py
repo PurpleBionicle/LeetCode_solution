@@ -23,4 +23,6 @@ class Solution:
                 current = 0
             i+=1
 
+        if current > max:
+            max = current
         return max
